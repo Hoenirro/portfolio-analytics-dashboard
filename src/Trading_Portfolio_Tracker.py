@@ -46,3 +46,25 @@ except Exception:
 
 st.sidebar.markdown("---")
 st.sidebar.caption("Built with Streamlit • Data powered by Yahoo Finance")
+
+with st.sidebar.expander("Diagnostics"):
+    import sys
+    import importlib
+    import importlib.metadata
+    st.write(f"Python: {sys.version.splitlines()[0]}")
+
+    # Check for key package(s)
+    try:
+        plotly_ver = importlib.metadata.version('plotly')
+        st.success(f"plotly installed: {plotly_ver}")
+    except importlib.metadata.PackageNotFoundError:
+        st.error("plotly is NOT installed in this environment.")
+
+    # Show requirements.txt if present
+    try:
+        with open('requirements.txt', 'r') as f:
+            reqs = f.read().strip()
+        st.markdown("**requirements.txt:**")
+        st.text(reqs or "(file is empty)")
+    except FileNotFoundError:
+        st.write("requirements.txt not found in repo root on the running instance.")
