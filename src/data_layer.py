@@ -10,7 +10,11 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # === DATABASE SETUP ===
-DATABASE_URL = "sqlite:///portfolio_data.db"
+import os
+
+# Read database connection from env so deployed apps can use a managed DB (Postgres, etc.).
+# Example for Streamlit Cloud / Supabase: set `DATABASE_URL` as a secret.
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///portfolio_data.db")
 engine = create_engine(DATABASE_URL, echo=False, future=True)
 Base = declarative_base()
 
