@@ -37,6 +37,8 @@ Deploying to Streamlit Community Cloud
 -------------------------------------
 1. Push your repository to GitHub (do NOT commit your `portfolio_venv/` folder).
 2. Create a new app in Streamlit Community Cloud and point the "Main file path" to `src/Trading_Portfolio_Tracker.py`.
+
+   Important: Streamlit installs Python packages from a file named `requirements.txt` (lowercase). If you have a file named `Requirements.txt`, also add a lowercase `requirements.txt` or rename it before deploying so dependencies are installed correctly.
 3. If you want persistent server DB storage, add `DATABASE_URL` in the app's Secrets (Dashboard → Settings → Secrets) with a Postgres-style URI (Supabase/ElephantSQL/Neon).
 
 Removing a committed venv

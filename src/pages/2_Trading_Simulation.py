@@ -1,7 +1,12 @@
 from datetime import datetime, timedelta
 import streamlit as st
 from sqlalchemy.orm import sessionmaker
-import plotly.graph_objects as go
+try:
+    import plotly.graph_objects as go
+except Exception as e:
+    import streamlit as st
+    st.error("Plotly is not installed in the environment. Make sure `requirements.txt` contains `plotly` and redeploy.")
+    st.stop()
 import pandas as pd
 
 # Import your existing modules

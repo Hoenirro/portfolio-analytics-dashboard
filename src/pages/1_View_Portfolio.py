@@ -1,7 +1,12 @@
 import streamlit as st
 import pandas as pd
-import plotly.graph_objects as go
-import plotly.express as px
+try:
+    import plotly.graph_objects as go
+    import plotly.express as px
+except Exception as e:
+    import streamlit as st
+    st.error("Plotly is not installed in the environment. Make sure `requirements.txt` contains `plotly` and redeploy.")
+    st.stop()
 from datetime import datetime, timedelta
 from sqlalchemy.orm import sessionmaker
 

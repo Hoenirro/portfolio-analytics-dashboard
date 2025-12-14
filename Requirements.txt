@@ -5,3 +5,10 @@ yfinance
 plotly
 sqlalchemy
 python-dotenv
+pandas
+numpy
+streamlit
+yfinance
+plotly
+sqlalchemy
+python-dotenv
