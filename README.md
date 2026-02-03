@@ -1,6 +1,8 @@
 Portfolio Analytics Dashboard
 =============================
 
+Take a look of this app working: https://portfolio-analytics-dashboard.streamlit.app/
+
 What it is
 ----------
 A small Streamlit app to track a simple stock portfolio: add tickers (fetched from Yahoo Finance), view historical prices, and run a basic automated trading simulation.
