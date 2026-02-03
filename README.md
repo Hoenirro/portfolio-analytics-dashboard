@@ -53,7 +53,7 @@ git push
 
 Questions or next steps
 -----------------------
-- Want me to wire up Postgres (Supabase) and set `DATABASE_URL` examples? I can add migration/startup SQL and an optional admin auth gate.
-- Want automatic backups or an auto-save to client localStorage? I can add either.
+- Wire up Postgres
+- Automatic backups or an auto-save to client localStorage
 
 Enjoy! Open an issue or ask me to add any of the above.
